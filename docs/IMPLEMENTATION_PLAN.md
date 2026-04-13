@@ -4,17 +4,15 @@
 
 ### Task 1.1: Core Architecture Setup
 
-- Set up basic project structure
-- Create configuration loading system (JSON/YAML support)
-- Establish base classes for window management functionality
-- [x] Completed
+- [x] Set up basic project structure
+- [x] Create configuration loading system (JSON/YAML support)
+- [x] Establish base classes for window management functionality
 
 ### Task 1.2: Testing Infrastructure
 
-- Set up testing framework
-- Configure git branches for feature development
-- Create basic test runner
-- [x] Completed
+- [x] Set up testing framework
+- [x] Configure git branches for feature development
+- [x] Create basic test runner
 
 ## Phase 2: Hyper Key Implementation (TDD Approach)
 
