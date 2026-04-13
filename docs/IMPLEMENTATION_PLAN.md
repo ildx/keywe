@@ -10,7 +10,7 @@
 
 ### Task 1.2: Testing Infrastructure
 
-- Set up testing framework (pytest, etc.)
+- Set up testing framework
 - Configure git branches for feature development
 - Create basic test runner
 
@@ -184,7 +184,7 @@
   },
   "window_tiling": {
     "enabled": true,
-    "layouts": ["tile", "cascade", "fullscreen"],
+    "layouts": ["tile", "cascade", "maximize"],
     "shortcuts": {
       "tile_left": "super+ctrl+left",
       "tile_right": "super+ctrl+right"
