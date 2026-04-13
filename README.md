@@ -1,6 +1,6 @@
 # Keywe - A keyboard assistant
 
-Keywe is a macOS native keyboard tool with three core features:
+Keywe is a macOS native keyboard tool built with Swift.
 
 ## Features
 
