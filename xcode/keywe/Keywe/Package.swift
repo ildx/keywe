@@ -2,19 +2,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "KeyweApp",
+    name: "Keywe",
     platforms: [
         .macOS(.v12)
     ],
     products: [
         .executable(
-            name: "KeyweApp",
-            targets: ["KeyweApp"]
+            name: "Keywe",
+            targets: ["Keywe"]
         ),
     ],
     targets: [
         .target(
-            name: "KeyweApp",
+            name: "Keywe",
             dependencies: []
         ),
     ]

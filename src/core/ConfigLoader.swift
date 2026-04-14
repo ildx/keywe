@@ -1,5 +1,5 @@
 /*
- Configuration Loader for Keywe App
+ Configuration Loader for Keywe
  This file would handle loading configuration from JSON/YAML files
  */
 
