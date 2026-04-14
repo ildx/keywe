@@ -10,23 +10,21 @@ import AppKit
 public class WindowTilingManager {
     
     // MARK: - Properties
-    private let keyboardManager: KeyboardManager
-    private let accessibilityManager: AccessibilityManager
     private var isTilingEnabled = false
     
     // MARK: - Singleton
     public static let shared = WindowTilingManager()
     
     // MARK: - Initializer
-    private init() {
-        self.keyboardManager = KeyboardManager.shared
-        self.accessibilityManager = AccessibilityManager.shared
-    }
+    private init() {}
     
     // MARK: - Public Methods
     
     /// Enable window tiling functionality
     public func enable() {
+        // Check for accessibility permissions
+        let accessibilityManager = AccessibilityManager.shared
+        
         guard accessibilityManager.isAccessibilityPermissionGranted() else {
             accessibilityManager.requestAccessibilityPermission()
             return
@@ -38,6 +36,7 @@ public class WindowTilingManager {
     
     /// Disable window tiling functionality
     public func disable() {
+        let keyboardManager = KeyboardManager.shared
         keyboardManager.stopMonitoring()
         isTilingEnabled = false
     }
@@ -66,10 +65,31 @@ public class WindowTilingManager {
         // Implementation would go here
     }
     
+    // MARK: - App Management Methods
+    
+    /// Launch an application by bundle identifier
+    public func launchApp(byBundleIdentifier bundleIdentifier: String) {
+        let appLauncher = AppLauncher.shared
+        appLauncher.launchApp(byBundleIdentifier: bundleIdentifier)
+    }
+    
+    /// Switch to the next application
+    public func switchToNextApp() {
+        let appSwitcher = AppSwitcher.shared
+        appSwitcher.switchToNextApp()
+    }
+    
+    /// Switch to the previous application
+    public func switchToPreviousApp() {
+        let appSwitcher = AppSwitcher.shared
+        appSwitcher.switchToPreviousApp()
+    }
+    
     // MARK: - Private Methods
     
     /// Setup keyboard monitoring for window tiling shortcuts
     private func setupKeyboardMonitoring() {
+        let keyboardManager = KeyboardManager.shared
         keyboardManager.setKeyHandler { [weak self] event in
             self?.handleKeyboardEvent(event)
         }
@@ -96,6 +116,18 @@ public class WindowTilingManager {
         // Check for maximize shortcut
         if event.modifierFlags.contains(.control) && event.modifierFlags.contains(.command) && event.modifierFlags.contains(.option) {
             maximize()
+        }
+        
+        // Check for application launching and switching shortcuts
+        if event.modifierFlags.contains(.command) && event.modifierFlags.contains(.control) {
+            switch event.keyCode {
+            case 36: // Enter key - launch app shortcut
+                launchApp(byBundleIdentifier: "com.apple.Safari") // Placeholder
+            case 48: // Tab key - switch app shortcut
+                switchToNextApp()
+            default:
+                break
+            }
         }
     }
 }
