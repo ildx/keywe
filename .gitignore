@@ -35,3 +35,24 @@ opencode.json
 *.bak
 *.swp
 *~
+
+## Swift Package Manager
+.swiftpm/
+/Packages
+/Package.resolved
+
+## CocoaPods
+# Pods/
+
+## Carthage
+Carthage/Build/
+
+## fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace

@@ -11,11 +11,19 @@ let package = Package(
             name: "Keywe",
             targets: ["Keywe"]
         ),
+        .library(
+            name: "KeyweCore",
+            targets: ["KeyweCore"]
+        ),
     ],
     targets: [
         .target(
-            name: "Keywe",
+            name: "KeyweCore",
             dependencies: []
+        ),
+        .target(
+            name: "Keywe",
+            dependencies: ["KeyweCore"]
         ),
     ]
 )
