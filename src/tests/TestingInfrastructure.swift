@@ -1,24 +1,27 @@
-/*
- Testing Infrastructure for Keywe App
- This would be part of the testing framework setup
- */
-
-// This file represents the testing infrastructure setup
-// In a real implementation, this would contain:
-// - Test runner setup
-// - Test framework configuration
-// - Mock utilities for testing
-
 import Foundation
 
-// Mock test utilities
-public struct TestUtilities {
-    // Placeholder for utility functions that would be used in tests
-    public static func setupTestEnvironment() {
-        // Setup test environment
-    }
-    
-    public static func tearDownTestEnvironment() {
-        // Clean up test environment
-    }
+// Testing infrastructure for Keywe application
+
+// This file would contain common test utilities and setup
+// For now it's a placeholder showing the intended structure
+
+public struct TestConstants {
+    public static let testCapsLockKey = 57
+}
+
+// Helper functions for testing keyboard events
+public func createTestKeyEvent(type: NSEvent.EventType, keyCode: UInt16, modifiers: NSEvent.ModifierFlags = []) -> NSEvent {
+    // This is a placeholder - actual implementation would need to create proper test events
+    return NSEvent.keyEvent(
+        with: type,
+        location: NSPoint.zero,
+        modifierFlags: modifiers,
+        timestamp: 0,
+        windowNumber: 0,
+        context: nil,
+        characters: "",
+        charactersIgnoringModifiers: "",
+        isARepeat: false,
+        keyCode: keyCode
+    ) ?? NSEvent()
 }
