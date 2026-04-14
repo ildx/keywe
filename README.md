@@ -14,6 +14,6 @@ To set up the development environment:
 
 1. Clone the repository
 2. Install skills (optional):
-   2.1. Install Node.js (required for skills CLI)
-   2.2. Run `npx skills install`
+   - Install Node.js (required for skills CLI)
+   - Run `npx skills install`
 3. [Build and run](docs/guides/build_and_run_instructions.md) the application
