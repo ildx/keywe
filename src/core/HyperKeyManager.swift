@@ -37,9 +37,8 @@ public class HyperKeyManager {
     
     /// Setup keyboard monitoring for Caps Lock detection
     private func setupKeyboardMonitoring() {
-        keyboardManager.addEventHandler { [weak self] event in
+        keyboardManager.setKeyHandler { [weak self] event in
             self?.handleKeyboardEvent(event)
-            return false // Don't consume the event by default
         }
         
         keyboardManager.startMonitoring()

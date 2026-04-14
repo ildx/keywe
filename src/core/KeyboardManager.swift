@@ -8,6 +8,9 @@ public class KeyboardManager {
     private var eventMonitor: Any?
     private var keyHandler: ((NSEvent) -> Void)?
     
+    // MARK: - Singleton
+    public static let shared = KeyboardManager()
+    
     // MARK: - Initialization
     public init() {}
     
