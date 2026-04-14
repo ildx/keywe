@@ -10,6 +10,9 @@
 - [Phase 6 - Testing](phase_6_testing.md)
 - [Phase 7 - Configuration Improvements](phase_7_configuration_improvements.md)
 - [Phase 8 - Xcode Integration](phase_8_xcode_integration.md)
+- [Phase 9 - Core Window Management](phase_9_core_window_management.md)
+- [Phase 10 - Application Switching and Launching](phase_10_app_switching_launching.md)
+- [Phase 11 - Configuration System](phase_11_configuration_system.md)
 
 ## Implementation Guidelines
 

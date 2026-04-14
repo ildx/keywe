@@ -95,8 +95,8 @@ public class ConfigLoader {
         switch fileExtension {
         case "json":
             return loadJSONConfig(from: data)
-        case "yaml", "yml":
-            return loadYAMLConfig(from: data)
+        case "toml":
+            return loadTOMLConfig(from: data)
         default:
             return nil
         }
@@ -155,6 +155,13 @@ public class ConfigLoader {
     private static func loadYAMLConfig(from data: Data) -> Configuration? {
         // This is a simplified approach that would require a YAML library in a real implementation
         // For now, we'll just return nil as a placeholder for YAML parsing
+        return nil
+    }
+    
+    // Load configuration from TOML data
+    private static func loadTOMLConfig(from data: Data) -> Configuration? {
+        // This is a placeholder for TOML parsing
+        // In a real implementation, this would use a TOML parsing library
         return nil
     }
     
