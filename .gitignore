@@ -28,8 +28,8 @@ xcuserdata/
 .Trashes
 
 ## Agents
-.agents/skills/*
-!.agents/skills/.gitkeep
+.agents
+opencode.json
 
 ## Backups
 *.bak
