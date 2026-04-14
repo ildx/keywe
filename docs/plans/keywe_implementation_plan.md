@@ -8,6 +8,8 @@
 - [Phase 4 - App management](phase_4_app_management.md)
 - [Phase 5 - Configuration](phase_5_configuration.md)
 - [Phase 6 - Testing](phase_6_testing.md)
+- [Phase 7 - Configuration Improvements](phase_7_configuration_improvements.md)
+- [Phase 8 - Xcode Integration](phase_8_xcode_integration.md)
 
 ## Implementation Guidelines
 

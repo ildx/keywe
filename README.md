@@ -8,7 +8,7 @@ Keywe is a macOS native keyboard tool built with Swift.
 2. **Window tiling** - Efficient window management with keyboard shortcuts
 3. **Application launching/switching** - Quick access to applications using keyboard shortcuts
 
-### Setup
+## Setup
 
 To set up the development environment:
 
@@ -17,5 +17,9 @@ To set up the development environment:
    2.1. Install Node.js (required for skills CLI)
    2.2. Run `npx skills install`
 3. Build and run the application
+
+## Building and Running
+
+For detailed build and run instructions, see: [Build and Run Instructions](docs/guides/build_and_run_instructions.md)
 
 The setup script will install all required skills using npx skills.
