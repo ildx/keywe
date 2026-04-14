@@ -14,6 +14,6 @@ To set up the development environment:
 
 1. Clone the repository
 2. Install skills (optional):
-   - Install Node.js (required for skills CLI)
+   - Install Node.js (required for [skills CLI](https://github.com/vercel-labs/skills))
    - Run `npx skills install`
 3. [Build and run](docs/guides/build_and_run_instructions.md) the application
