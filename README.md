@@ -13,8 +13,9 @@ Keywe is a macOS native keyboard tool built with Swift.
 To set up the development environment:
 
 1. Clone the repository
-2. Install Node.js (required for npx skills installation)
-3. Run the setup script: `./scripts/setup-skills.sh`
-4. Build and run the application
+2. Install skills (optional):
+   2.1. Install Node.js (required for skills CLI)
+   2.2. Run `npx skills install`
+3. Build and run the application
 
 The setup script will install all required skills using npx skills.
