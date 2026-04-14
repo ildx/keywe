@@ -16,10 +16,4 @@ To set up the development environment:
 2. Install skills (optional):
    2.1. Install Node.js (required for skills CLI)
    2.2. Run `npx skills install`
-3. Build and run the application
-
-## Building and Running
-
-For detailed build and run instructions, see: [Build and Run Instructions](docs/guides/build_and_run_instructions.md)
-
-The setup script will install all required skills using npx skills.
+3. [Build and run](docs/guides/build_and_run_instructions.md) the application
