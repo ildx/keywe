@@ -33,7 +33,6 @@ public struct Configuration {
     let hyperKey: HyperKeyConfig
     let windowTiling: WindowTilingConfig
     let appSwitching: AppSwitchingConfig
-    let version: String // Configuration version for compatibility checking
 }
 
 // MARK: - Configuration Validator
@@ -64,18 +63,6 @@ public struct ConfigurationValidator {
 
 // MARK: - Configuration Loader Implementation
 public class ConfigLoader {
-    
-    // User configuration directory path
-    private static let userConfigDirectory = "\(NSHomeDirectory())/Library/Preferences/keywe"
-    
-    // System configuration directory path
-    private static let systemConfigDirectory = "/etc/keywe"
-    
-    // Configuration file name
-    private static let configFileName = "config.json"
-    
-    // Version of the current configuration format
-    private static let configurationVersion = "1.0"
     
     // This function loads configuration from a file (JSON or YAML)
     public static func loadConfig(from filePath: String) -> Configuration? {
@@ -129,14 +116,10 @@ public class ConfigLoader {
                     shortcuts: parseShortcuts(from: appSwitchingDict["shortcuts"] as? [String: Any] ?? [:])
                 )
                 
-                // Extract version from config or set default
-                let version = jsonObject["version"] as? String ?? "1.0"
-                
                 let config = Configuration(
                     hyperKey: hyperKeyConfig,
                     windowTiling: windowTilingConfig,
-                    appSwitching: appSwitchingConfig,
-                    version: version
+                    appSwitching: appSwitchingConfig
                 )
                 
                 // Validate the configuration
@@ -190,86 +173,7 @@ public class ConfigLoader {
                     switchApps: "alt+tab",
                     launchApp: "super+enter"
                 )
-            ),
-            version: configurationVersion
-        )
-    }
-    
-    // Load configuration prioritizing user settings over system settings
-    public static func loadConfiguration() -> Configuration {
-        // First, try to load from user directory
-        let userConfigPath = "\(userConfigDirectory)/\(configFileName)"
-        if let userConfig = loadConfig(from: userConfigPath) {
-            // If user config exists, validate and return it
-            return userConfig
-        }
-        
-        // If no user config, try system config
-        let systemConfigPath = "\(systemConfigDirectory)/\(configFileName)"
-        if let systemConfig = loadConfig(from: systemConfigPath) {
-            // If system config exists, use it with fallback logic
-            return systemConfig
-        }
-        
-        // If neither exists, return default configuration
-        return loadDefaultConfig()
-    }
-    
-    // Initialize user configuration directory and default config file if needed
-    public static func initializeUserConfig() {
-        // Create user config directory if it doesn't exist
-        do {
-            try FileManager.default.createDirectory(
-                atPath: userConfigDirectory,
-                withIntermediateDirectories: true,
-                attributes: nil
             )
-            
-            // Check if config file exists
-            let configPath = "\(userConfigDirectory)/\(configFileName)"
-            if !FileManager.default.fileExists(atPath: configPath) {
-                // Create default config file
-                let defaultConfig = loadDefaultConfig()
-                let jsonString = toJSON(config: defaultConfig)
-                try jsonString.write(toFile: configPath, atomically: true, encoding: .utf8)
-            }
-        } catch {
-            // If we can't create directory or file, log error but continue with default config
-            print("Warning: Could not initialize user configuration directory or file: \(error)")
-        }
-    }
-    
-    // Convert configuration to JSON string
-    private static func toJSON(config: Configuration) -> String {
-        // This is a simplified version for demonstration; in real scenario,
-        // more sophisticated conversion logic would be needed
-        return """
-        {
-            "version": "\(config.version)",
-            "hyperKey": {
-                "enabled": \(config.hyperKey.enabled),
-                "mapping": "\(config.hyperKey.mapping)"
-            },
-            "windowTiling": {
-                "enabled": \(config.windowTiling.enabled),
-                "layouts": [\(config.windowTiling.layouts.map { "\"\($0)\"" }.joined(separator: ", "))],
-                "shortcuts": {
-                    "tileLeft": "\(config.windowTiling.shortcuts.tileLeft)",
-                    "tileRight": "\(config.windowTiling.shortcuts.tileRight)",
-                    "switchApps": "\(config.windowTiling.shortcuts.switchApps)",
-                    "launchApp": "\(config.windowTiling.shortcuts.launchApp)"
-                }
-            },
-            "appSwitching": {
-                "enabled": \(config.appSwitching.enabled),
-                "shortcuts": {
-                    "tileLeft": "\(config.appSwitching.shortcuts.tileLeft)",
-                    "tileRight": "\(config.appSwitching.shortcuts.tileRight)",
-                    "switchApps": "\(config.appSwitching.shortcuts.switchApps)",
-                    "launchApp": "\(config.appSwitching.shortcuts.launchApp)"
-                }
-            }
-        }
-        """
+        )
     }
 }
