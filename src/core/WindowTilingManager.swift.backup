@@ -43,30 +43,26 @@ public class WindowTilingManager {
     
     /// Tile the active window to the left half of the screen
     public func tileLeft() {
-        // This method handles actual window tiling to the left half of screen
-        // Implementation using NSScreen and NSWindow APIs
-        print("Tiling window to the left - Core functionality implemented")
+        print("Tiling window to the left")
+        // Implementation would go here
     }
     
     /// Tile the active window to the right half of the screen
     public func tileRight() {
-        // This method handles actual window tiling to the right half of screen
-        // Implementation using NSScreen and NSWindow APIs
-        print("Tiling window to the right - Core functionality implemented")
+        print("Tiling window to the right")
+        // Implementation would go here
     }
     
     /// Maximize the active window to full screen
     public func maximize() {
-        // This method handles maximizing the active window
-        // Implementation using NSScreen and NSWindow APIs
-        print("Maximizing window - Core functionality implemented")
+        print("Maximizing window")
+        // Implementation would go here
     }
     
     /// Cascade windows
     public func cascade() {
-        // This method handles cascading of windows
-        // Implementation using NSScreen and NSWindow APIs
-        print("Cascading windows - Core functionality implemented")
+        print("Cascading windows")
+        // Implementation would go here
     }
     
     // MARK: - App Management Methods

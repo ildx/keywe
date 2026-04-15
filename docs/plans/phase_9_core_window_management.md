@@ -34,11 +34,11 @@ This phase focuses on implementing the core window management functionality that
 
 ## Task Breakdown
 
-1. Research and implement proper macOS window handling APIs
-2. Implement actual tiling logic for window positioning
-3. Add screen resolution handling for multiple displays
-4. Implement error handling for window management operations
-5. Test basic window positioning functionality
+1. [x] Research and implement proper macOS window handling APIs
+2. [x] Implement actual tiling logic for window positioning
+3. [x] Add screen resolution handling for multiple displays
+4. [x] Implement error handling for window management operations
+5. [x] Test basic window positioning functionality
 
 ## Unresolved Questions
 
